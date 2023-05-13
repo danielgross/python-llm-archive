@@ -1,7 +1,9 @@
 import unittest
 import llm
 import os
-llm.set_api_key(anthropic=open(os.path.expanduser("~/.anthropic")).read().strip())
+
+llm.set_api_key(anthropic=open(
+    os.path.expanduser("~/.anthropic")).read().strip())
 
 
 class TestClaudeCompletions(unittest.TestCase):
