@@ -25,11 +25,13 @@ llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Claude
 llm.chat(["hi", "hi how are you", "tell me a joke"])
 
 # Embedding text (not yet implemented)
-llm.embed(open("harrypotter.txt").read())```
+llm.embed(open("harrypotter.txt").read())
+```
 
 ## Configuration
 You can configure the API keys for the various services using the set_api_key method:
 ```python
 llm.set_api_key(openai="sk-...", natdev="...")
 # or
-llm.set_api_key("path/to/api_keys.json")```
+llm.set_api_key("path/to/api_keys.json")
+```
