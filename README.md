@@ -18,8 +18,8 @@ To install `python-llm`, use pip: ```pip install python-llm```.
 import llm
 
 # Text completion
-llm.complete("hello, I am a") # Uses GPT-3 by default if key is provided
-llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Claude model from Anthropic
+llm.complete("hello, I am a") # Uses GPT-3 by default if key is provided.
+llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Anthropic's model.
 
 # Chatting with the model
 llm.chat(["hi", "hi how are you", "tell me a joke"])
