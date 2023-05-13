@@ -17,17 +17,17 @@ To install `python-llm`, use pip: ```pip install python-llm```.
 ```python
 import llm
 
-# Text completion
+# Completion
 llm.complete("hello, I am a") # Uses GPT-3 by default if key is provided.
 llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Anthropic's model.
 
-# Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
-
-# Chatting with the model
+# Chat
 llm.chat(["hi", "hi how are you", "tell me a joke"])
 
-# Embedding text (not yet implemented)
+# Embedding 
 llm.embed(open("harrypotter.txt").read())
+
+# Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
 ```
 
 ## Configuration
