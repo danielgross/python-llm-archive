@@ -6,9 +6,9 @@ with open('requirements.txt') as f:
 setup(
     name='python-llm',
     version='0.1.0',
-    author='Your Name',
-    author_email='your.email@example.com',
-    description='A Python package for llm',
+    author='Daniel Gross',
+    author_email='d@dcgross.com',
+    description='An LLM wrapper for Humans',
     packages=find_namespace_packages(include=['llm', 'llm.*']),
     classifiers=[
     ],
