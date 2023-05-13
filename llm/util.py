@@ -43,7 +43,7 @@ def _on_update_api_keys():
 def structure_chat(messages):
     """Structure chat messages."""
     if isinstance(messages[0], str):
-        # recreate as dictionary where "role" is either "system" or "user"
+        # recreate as dictionary where "role" is either "assistant" or "user"
         messages = [{"role": "user" if i % 2 == 0 else "assistant",
                      "content": text} for i, text in enumerate(messages)]
     elif isinstance(messages[0], str):

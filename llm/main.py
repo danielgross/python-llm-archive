@@ -20,7 +20,7 @@ def complete(prompt, engine="text-davinci-003", **kwargs):
     if args.service == "openai":
         return openaiapi.complete(prompt, args.engine, **args.kwargs)
     elif args.service == "anthropic":
-        return claude.complete(prompt, model=args.engine, **args.kwargs)
+        return claude.complete(prompt, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
 
@@ -32,6 +32,8 @@ def chat(messages, engine="text-davinci-003", **kwargs):
     messages = structure_chat(messages)
     if args.service == "openai":
         return openaiapi.chat(messages, args.engine, **args.kwargs)
+    elif args.service == "anthropic":
+        return claude.chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
 
