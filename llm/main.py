@@ -45,7 +45,7 @@ def embed(text, engine="text-davinci-003", **kwargs):
 
 def set_api_key(**key_thing):
     """Set the OpenAI API key. Call me like this:
-    llm.set_api_keys(openai="sk-...", natdev="...")
+    llm.set_api_keys(openai="sk-...", anthropic="sk-...")
     or
     llm.set_api_keys("path/to/api_keys.json")
     """
