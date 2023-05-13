@@ -12,16 +12,17 @@ import json
 import os
 
 from llm.util import parse_args, structure_chat, configure_api_keys
-from llm.api import openaiapi
-
+from llm.api import openaiapi, claude
 
 def complete(prompt, engine="text-davinci-003", **kwargs):
-    """Complete text using the LLM API."""
     args = parse_args(engine, **kwargs)
     if args.service == "openai":
         return openaiapi.complete(prompt, args.engine, **args.kwargs)
+    elif args.service == "anthropic":
+        return claude.complete(prompt, model=args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
+
 
 
 # Can also pass in system="Behave like a bunny rabbit" for system message.
