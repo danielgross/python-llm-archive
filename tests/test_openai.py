@@ -4,8 +4,10 @@ import os
 import vcr
 import llm
 
-
-llm.set_api_key(openai=open(os.path.expanduser("~/.openai")).read().strip())
+# Only get API keys if they exist
+if os.path.exists(os.path.expanduser("~/.openai")):
+    llm.set_api_key(anthropic=open(
+        os.path.expanduser("~/.openai")).read().strip())
 
 
 class TestOpenAICompletions(unittest.TestCase):
