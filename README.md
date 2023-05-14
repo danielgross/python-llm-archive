@@ -8,6 +8,7 @@ Like python-requests but for LLMs. It supports models from OpenAI and Anthropic,
 
 ```python
 import llm
+llm.set_api_key(openai="sk-...", anthropic="sk-...")
 
 # Chat
 llm.chat(["what is 2+2"]) # 4. Uses GPT-3 by default if key is provided.
@@ -30,11 +31,3 @@ llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this y
 ## Installation
 
 To install `python-llm`, use pip: ```pip install python-llm```.
-
-## Configuration
-You can configure the API keys for the various services using the set_api_key method:
-```python
-llm.set_api_key(openai="sk-...", anthropic="...")
-# or llm.set_api_key("path/to/api_keys.json")
-llm.chat(["what is 2+2"]) # 4.
-```
