@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "gpt-3.5-turbo"},
+      {"role": "user", "content": "hello"}, {"role": "assistant", "content": "how
+      are you?"}, {"role": "user", "content": "I''m good, thanks."}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAI/v1 PythonBindings/0.27.2
+      X-OpenAI-Client-User-Agent:
+      - '{"bindings_version": "0.27.2", "httplib": "requests", "lang": "python", "lang_version":
+        "3.10.9", "platform": "macOS-13.2-arm64-arm-64bit", "publisher": "openai",
+        "uname": "Darwin 22.3.0 Darwin Kernel Version 22.3.0: Thu Jan  5 20:50:36
+        PST 2023; root:xnu-8792.81.2~2/RELEASE_ARM64_T6020 arm64 arm"}'
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        ISwFACBW6qz/ptJsLRNEzxUAyxCgU6xzwjo5cLydtC04cIIhBRRoFEiAecpKYR4abmiDQQWFsq+5
+        nJixk51lF7PX9nX10jx8Pvmn5Qe9VeY2mVj/cgYJKoZ1ySq61gIZ0BQSceXL6goqSPPYz5I0SyUm
+        VNVjKPQMO5GbONw2BTl+5AeQaK3u1VAbmIYmhv+YRvXUQsWRREkTMz4PKgWRxP5/oJakO4k4fbFQ
+        Xxs4NL6gNmhoXENBWzuwrKcMifq6rsLZWFeCSfRr3Qjua3bFOS1EqafiQsgqsaJWMFV6dYydRGtb
+        +PuQ9QAFy2QgMcvfQ/m7n92eAQM=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7c73f06f4d8018ea-EWR
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - br
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 14 May 2023 14:47:57 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - dgorg
+      openai-processing-ms:
+      - '1215'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '89968'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 21ms
+      x-request-id:
+      - acc6b2a51f9edeb409fc6f5179670000
+    status:
+      code: 200
+      message: OK
+version: 1

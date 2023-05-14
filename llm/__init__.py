@@ -1,1 +1,1 @@
-from llm.main import complete, chat, embed, set_api_key
+from llm.main import complete, chat, stream_chat, embed, set_api_key

@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Hello,
+      my name is"}], "max_tokens": 1}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '107'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAI/v1 PythonBindings/0.27.2
+      X-OpenAI-Client-User-Agent:
+      - '{"bindings_version": "0.27.2", "httplib": "requests", "lang": "python", "lang_version":
+        "3.10.9", "platform": "macOS-13.2-arm64-arm-64bit", "publisher": "openai",
+        "uname": "Darwin 22.3.0 Darwin Kernel Version 22.3.0: Thu Jan  5 20:50:36
+        PST 2023; root:xnu-8792.81.2~2/RELEASE_ARM64_T6020 arm64 arm"}'
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        IYgEACDwRHZ+n6Z89VyEKSN988DdSG5wApboPsThOD7KZtMkg5usFJyGBpelE+E/yl/ws/5LbeI0
+        Bo3R6nYyeZ5sdu3x3aOf/f83Bw/7UXve9hDMb+T+rbeQtxZQaDKEuPJj7j9aqjerxUat3mgKqfl3
+        ExTfrp1KvuasN8tf4xQrxRLCZvXju+gJuzSpXX+tTexmK7RUEf5MapPzMkpC/X8RrXoR0vRphb6d
+        MGh8oSeWJnFRflarcLX+ydYI9LpBubJuxkVAsYWvt1c7CrKhILTt92jx8nHJGQM=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7c73f07b5f23425e-EWR
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - br
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 14 May 2023 14:47:58 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - dgorg
+      openai-processing-ms:
+      - '564'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '89992'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 4ms
+      x-request-id:
+      - acc6b2a51f9edeb409fc6f5179672b0d
+    status:
+      code: 200
+      message: OK
+version: 1

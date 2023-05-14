@@ -1,17 +1,17 @@
-import logging
 import unittest
-import llm
 import os
+
+import vcr
+import llm
+
+
 llm.set_api_key(openai=open(os.path.expanduser("~/.openai")).read().strip())
 
 
 class TestOpenAICompletions(unittest.TestCase):
 
-    def setUp(self) -> None:
-        logging.basicConfig(level=logging.DEBUG)
 
-        return super().setUp()
-
+    @vcr.use_cassette("tests/fixtures/openai/test_completion.yaml", filter_headers=['authorization'])
     def test_completion(self):
         prompt = "Hello, my name is"
         completion = llm.complete(
@@ -20,6 +20,7 @@ class TestOpenAICompletions(unittest.TestCase):
         self.assertEqual(len(completion.split(' ')), 1)
         self.assertTrue(completion[0].isupper(), completion)
 
+    @vcr.use_cassette("tests/fixtures/openai/test_completion_chat_model.yaml", filter_headers=['authorization'])
     def test_completion_chat_model(self):
         """Test that we can use a chat model for completion."""
         prompt = "Hello, my name is"
@@ -29,6 +30,7 @@ class TestOpenAICompletions(unittest.TestCase):
         self.assertEqual(len(completion.split(' ')), 1)
         self.assertTrue(completion[0].isupper(), completion)
 
+    @vcr.use_cassette("tests/fixtures/openai/test_chat.yaml", filter_headers=['authorization'])
     def test_chat(self):
         messages = ["hello", "how are you?", "I'm good, thanks."]
         response = llm.chat(messages, engine="openai:gpt-3.5-turbo")

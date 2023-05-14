@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: '{"stream": true, "prompt": "\n\nHuman: what is your favorite cat breed?\n\nAssistant:
+      I like tabbies.\n\nHuman: And what about dogs? Reply with punctuation.\n\nAssistant:",
+      "stop_sequences": ["\n\nHuman:"], "max_tokens_to_sample": 30, "model": "claude-v1"}'
+    headers:
+      Accept:
+      - application/json
+      Client:
+      - anthropic-python/0.2.8
+      Content-Type:
+      - application/json
+    method: post
+    uri: https://api.anthropic.com/v1/complete
+  response:
+    body:
+      string: "data: {\"completion\": \" I don\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals or\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals or pets. I'm an\", \"stop\"\
+        : null, \"stop_reason\": null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals or pets. I'm an AI assistant\
+        \ created by An\", \"stop\": null, \"stop_reason\": null, \"truncated\": false,\
+        \ \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\", \"model\": \"claude-v1\"\
+        , \"exception\": null}\r\n\r\ndata: {\"completion\": \" I don't actually have\
+        \ any favorite animals or pets. I'm an AI assistant created by Anthropic to\
+        \ be helpful\", \"stop\": null, \"stop_reason\": null, \"truncated\": false,\
+        \ \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\", \"model\": \"claude-v1\"\
+        , \"exception\": null}\r\n\r\ndata: {\"completion\": \" I don't actually have\
+        \ any favorite animals or pets. I'm an AI assistant created by Anthropic to\
+        \ be helpful, harmless, and honest\", \"stop\": null, \"stop_reason\": null,\
+        \ \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\", \"\
+        model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals or pets. I'm an AI assistant\
+        \ created by Anthropic to be helpful, harmless, and honest.\", \"stop\": null,\
+        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I don't actually have any favorite animals or pets. I'm an AI assistant\
+        \ created by Anthropic to be helpful, harmless, and honest.\", \"stop\": null,\
+        \ \"stop_reason\": \"max_tokens\", \"truncated\": false, \"log_id\": \"2cfc7d6cefff2b86a96b0c4b544486a\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: [DONE]\r\n\r\
+        \n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Date:
+      - Sun, 14 May 2023 14:43:32 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 google
+      request-id:
+      - acc6b2a51f9edeb409fc6f5179670000
+      x-accel-buffering:
+      - 'no'
+    status:
+      code: 200
+      message: OK
+    url: https://api.anthropic.com/v1/complete
+version: 1

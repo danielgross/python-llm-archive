@@ -26,16 +26,32 @@ def complete(prompt, engine="text-davinci-003", **kwargs):
 
 
 # Can also pass in system="Behave like a bunny rabbit" for system message.
-def chat(messages, engine="text-davinci-003", **kwargs):
+def chat(messages, engine="openai:text-davinci-003", **kwargs):
     """Chat with the LLM API."""
     args = parse_args(engine, **kwargs)
     messages = structure_chat(messages)
     if args.service == "openai":
-        return openaiapi.chat(messages, args.engine, **args.kwargs)
+        result = openaiapi.chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
-        return claude.chat(messages, args.engine, **args.kwargs)
+        result = claude.chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
+    return result.strip()
+    
+
+async def stream_chat(messages, engine="text-davinci-003", **kwargs):
+    """Chat with the LLM API."""
+    args = parse_args(engine, **kwargs)
+    messages = structure_chat(messages)
+    if args.service == "openai":
+        NotImplementedError("Not implemented yet.")
+    elif args.service == "anthropic":
+        result = claude.stream_chat(messages, args.engine, **args.kwargs)
+    else:
+        raise ValueError(f"Engine {engine} is not supported.")
+    async for message in result:
+        yield message.strip()
+
 
 
 def embed(text, engine="text-davinci-003", **kwargs):
