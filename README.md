@@ -1,18 +1,8 @@
 # python-llm: A LLM API for Humans
 
-This is a Python wrapper for the Language Learning Models (LLM) APIs, designed to make it easy to use different language models. It supports models from OpenAI and Anthropic, with a simple and intuitive interface.
+Like python-requests but for LLMs. It supports models from OpenAI and Anthropic, with more coming soon.
 
 ![Tests](https://github.com/danielgross/python-llm/actions/workflows/tests.yml/badge.svg)
-
-## Features
-
-- **Text Completion**: Complete text prompts using different language models.
-- **Chat**: Simulate a conversation with a language model.
-- **Text Embedding**: Transform text into a high-dimensional vector (not yet implemented).
-
-## Installation
-
-To install `python-llm`, use pip: ```pip install python-llm```.
 
 ## Usage
 
@@ -31,6 +21,16 @@ llm.embed(open("harrypotter.txt").read())
 
 # Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
 ```
+
+## Installation
+
+To install `python-llm`, use pip: ```pip install python-llm```.
+
+## Features
+
+- **Text Completion**: Complete text prompts using different language models.
+- **Chat**: Simulate a conversation with a language model.
+- **Text Embedding**: Transform text into a high-dimensional vector (not yet implemented).
 
 ## Configuration
 You can configure the API keys for the various services using the set_api_key method:
