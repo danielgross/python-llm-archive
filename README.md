@@ -11,15 +11,15 @@ import llm
 
 # Chat
 llm.chat(["what is 2+2"]) # 4. Uses GPT-3 by default if key is provided.
-llm.chat(["what is 2+2"], engine="anthropic:claude-instant-v1") 
+llm.chat(["what is 2+2"], engine="anthropic:claude-instant-v1") # 4.
 
 # Completion
-llm.complete("hello, I am") 
-llm.complete("hello, I am", engine="openai:gpt-4")
-llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Anthropic's model.
+llm.complete("hello, I am") # A GPT model.
+llm.complete("hello, I am", engine="openai:gpt-4") # A big GPT model.
+llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Claude.
 
 # Back-and-forth chat
-llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Human/assistant/human exchanges.
+llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Human/assistant/human exchanges are supported.
 
 # Embedding
 llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this yet.)
