@@ -19,8 +19,8 @@ llm.complete("hello, I am") # A GPT model.
 llm.complete("hello, I am", engine="openai:gpt-4") # A big GPT model.
 llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Claude.
 
-# Back-and-forth chat
-llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Human/assistant/human exchanges are supported.
+# Back-and-forth chat [human, assistant, human]
+llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"])
 
 # Embedding
 llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this yet.)
