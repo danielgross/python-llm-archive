@@ -31,16 +31,10 @@ llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this y
 
 To install `python-llm`, use pip: ```pip install python-llm```.
 
-## Features
-
-- **Text Completion**: Complete text prompts using different language models.
-- **Chat**: Simulate a conversation with a language model.
-- **Text Embedding**: Transform text into a high-dimensional vector (not yet implemented).
-
 ## Configuration
 You can configure the API keys for the various services using the set_api_key method:
 ```python
 llm.set_api_key(openai="sk-...", anthropic="...")
-# or
-llm.set_api_key("path/to/api_keys.json")
+# or llm.set_api_key("path/to/api_keys.json")
+llm.chat(["what is 2+2"]) # 4.
 ```
