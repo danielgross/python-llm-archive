@@ -10,7 +10,8 @@ Like python-requests but for LLMs. It supports models from OpenAI and Anthropic,
 import llm
 
 # Completion
-llm.complete("hello, I am a") # Uses GPT-3 by default if key is provided.
+llm.complete("hello, I am") # Uses GPT-3 by default if key is provided.
+llm.complete("hello, I am", engine="openai:gpt-4")
 llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Anthropic's model.
 
 # Chat
