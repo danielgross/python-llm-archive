@@ -21,6 +21,10 @@ llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Uses Anthro
 # Back-and-forth chat
 llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Human/assistant/human exchanges.
 
+# Embedding
+llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this yet.)
+
+
 # Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
 ```
 
