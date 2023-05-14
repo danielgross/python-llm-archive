@@ -3,7 +3,6 @@ import llm
 import os
 import vcr
 import asynctest
-import asyncio
 
 # Only get API keys if they exist
 _key = open(os.path.expanduser("~/.anthropic")).read().strip() if os.path.exists(
