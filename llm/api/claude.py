@@ -5,8 +5,10 @@ from llm.util import api_keys
 
 BASE_URL = "https://api.anthropic.com"
 
+
 def client():
     return anthropic.Client(api_keys["anthropic"])
+
 
 def format_chat_messages(messages):
     prompt = []
@@ -22,7 +24,7 @@ def format_chat_messages(messages):
     # Add a final AI prompt
     prompt.append(anthropic.AI_PROMPT)
     return "".join(prompt)
-    
+
 
 def complete(prompt, engine="claude-v1", max_tokens_to_sample=10, **kwargs):
     headers = {

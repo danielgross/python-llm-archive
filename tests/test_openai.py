@@ -10,7 +10,6 @@ llm.set_api_key(openai=open(os.path.expanduser("~/.openai")).read().strip())
 
 class TestOpenAICompletions(unittest.TestCase):
 
-
     @vcr.use_cassette("tests/fixtures/openai/test_completion.yaml", filter_headers=['authorization'])
     def test_completion(self):
         prompt = "Hello, my name is"

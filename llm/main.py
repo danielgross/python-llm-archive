@@ -37,7 +37,7 @@ def chat(messages, engine="openai:text-davinci-003", **kwargs):
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
-    
+
 
 async def stream_chat(messages, engine="text-davinci-003", **kwargs):
     """Chat with the LLM API."""
@@ -51,7 +51,6 @@ async def stream_chat(messages, engine="text-davinci-003", **kwargs):
         raise ValueError(f"Engine {engine} is not supported.")
     async for message in result:
         yield message.strip()
-
 
 
 def embed(text, engine="text-davinci-003", **kwargs):
