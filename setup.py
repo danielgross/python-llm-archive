@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='python-llm',
-    version='0.1.0',
+    version='0.1.1',
     author='Daniel Gross',
     author_email='d@dcgross.com',
     description='An LLM wrapper for Humans',
