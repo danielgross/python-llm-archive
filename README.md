@@ -1,8 +1,8 @@
 # python-llm: A LLM API for Humans
 
-The vision is to be as simple as python-requests, but for LLMs. This library supports models from OpenAI and Anthropic, with more coming soon.
-
 ![Tests](https://github.com/danielgross/python-llm/actions/workflows/tests.yml/badge.svg)
+
+The vision is to be as simple as python-requests, but for LLMs. This library supports models from OpenAI and Anthropic, with more coming soon.
 
 ## Usage
 
