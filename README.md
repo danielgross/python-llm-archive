@@ -36,7 +36,7 @@ To install `python-llm`, use pip: ```pip install python-llm```.
 ## Configuration
 You can configure the API keys for the various services using the set_api_key method:
 ```python
-llm.set_api_key(openai="sk-...", natdev="...")
+llm.set_api_key(openai="sk-...", anthropic="...")
 # or
 llm.set_api_key("path/to/api_keys.json")
 ```
