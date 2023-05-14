@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -24,25 +24,25 @@ interactions:
   response:
     body:
       string: !!binary |
-        ISAEACBmzOln1O51ShQ7JFXCMbvBgWPiaT7wgK80veDAC+42do4aNE5aLX6xLsDI96edYHWs3qU7
-        VZbDRqOYOsV20HLP94e1mCvOAoRjtinzGxi38nWLxwrM+ngAwaq8VxZgxbR12TJMyyLsj0W5K6mE
-        In2sD/lakGUVBAt8XcH+V3IAoz5ObyDcuT8Dy4TdcXm6HLMr+HDf7Qi5aS7eUTWDka/whn9IuF/T
-        ZQn+4nQ57k+3+Hbclocr2CC0CiYohDcCAKT5/9cMAw==
+        H4sIAAAAAAAAA0SOzUrEMBRG9z6FfOsUMkNtS7YOivgDCi4GkZIm1zSa5pYmY0dK310UGbfnnMVZ
+        4C0UzDCGor5uSrd/4FrePj/J/d3X472Zb+bZXV7VHQS4eyeToZDpmFvDwxgoe44QMBPpTBZqUzWl
+        rJuq3AoMbCn85YXVnz4aX0i5/el79oYS1Mvyq6FwvtPRU4CAj5aOUFIgsBsn7hJUPIQg8OajT307
+        kU4coRAoutxjfRU4JO0IasE48TDmNvMHxQR1IfB/eqIbgcxZhxOo1vXsGwAA//8DABFw5RAMAQAA
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7c73f078ccec43e7-EWR
+      - 7c7438d98d1741bd-EWR
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
       - keep-alive
       Content-Encoding:
-      - br
+      - gzip
       Content-Type:
       - application/json
       Date:
-      - Sun, 14 May 2023 14:47:57 GMT
+      - Sun, 14 May 2023 15:37:22 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -56,7 +56,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '155'
+      - '101'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -74,7 +74,7 @@ interactions:
       x-ratelimit-reset-tokens:
       - 0s
       x-request-id:
-      - acc6b2a51f9edeb409fc6f5179670000
+      - 67eb1582a4d589f182e367fb7b77d456
     status:
       code: 200
       message: OK
