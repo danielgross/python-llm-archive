@@ -2,6 +2,8 @@
 
 This is a Python wrapper for the Language Learning Models (LLM) APIs, designed to make it easy to use different language models. It supports models from OpenAI and Anthropic, with a simple and intuitive interface.
 
+![Tests](https://github.com/danielgross/python-llm/actions/workflows/tests.yml/badge.svg)
+
 ## Features
 
 - **Text Completion**: Complete text prompts using different language models.
