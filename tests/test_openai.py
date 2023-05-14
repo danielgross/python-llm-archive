@@ -5,9 +5,9 @@ import vcr
 import llm
 
 # Only get API keys if they exist
-if os.path.exists(os.path.expanduser("~/.openai")):
-    llm.set_api_key(anthropic=open(
-        os.path.expanduser("~/.openai")).read().strip())
+_key = open(os.path.expanduser("~/.openai")).read().strip() if os.path.exists(
+    os.path.expanduser("~/.openai")) else 'test'
+llm.set_api_key(openai=_key)
 
 
 class TestOpenAICompletions(unittest.TestCase):

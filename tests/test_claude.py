@@ -5,9 +5,10 @@ import vcr
 import asynctest
 import asyncio
 
-llm.set_api_key(anthropic=open(
-    os.path.expanduser("~/.anthropic")).read().strip())
-
+# Only get API keys if they exist
+_key = open(os.path.expanduser("~/.anthropic")).read().strip() if os.path.exists(
+    os.path.expanduser("~/.anthropic")) else 'test'
+llm.set_api_key(anthropic=_key)
 
 class TestClaudeCompletions(unittest.TestCase):
 
