@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "python-llm"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+packages = [{include = "python_llm"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "3.8.3"
+aiosignal = "1.3.1"
+anthropic = "0.2.8"
+pyyaml = "5.4.1"
+openai = "0.27.2"
+asynctest = "0.13.0"
+urllib3 = "1.26.14"
+vcrpy = "4.2.1"
+python-dotenv = "1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

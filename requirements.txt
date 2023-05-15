@@ -7,3 +7,4 @@ asynctest==0.13.0
 urllib3==1.26.14
 vcrpy==4.2.1
 virtualenv==20.19.0
+python-dotenv==1.0.0
