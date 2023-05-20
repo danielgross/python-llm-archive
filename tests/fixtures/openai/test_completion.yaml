@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"prompt": "Hello, my name is", "max_tokens": 1}'
+    body: '{"prompt": "2+2 is how much? Good question, I think 2+2=", "max_tokens":
+      1}'
     headers:
       Accept:
       - '*/*'
@@ -9,7 +10,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '48'
+      - '75'
       Content-Type:
       - application/json
       User-Agent:
@@ -24,15 +25,15 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0SOzUoDMRRG9z6FfOsMZKQdS5ZSii5cWLX4gwxpcp2JZnJDkpaRYd5dFKnbc87i
-        THAWCmaIvrq82TzrXF/tXvr7h7uwHW+/jrvhUbqn7fUaArz/IFOgUGgsreEheiqOAwRMIl3IQtXN
-        arFcLWQjBQa25P/yyuqjC8ZVUl789D07QxnqdfrVUDhfJwi4YGmEkgKeu5h4n6HCwXuBdxdc7ttE
-        OnOAgqfQlR7zm8Ah646gJsTEQyxt4U8KGWop8H95orVA4aL9CTTzfPYNAAD//wMAwpd/tQgBAAA=
+        H4sIAAAAAAAAA0SOzUrEMBRG9z7Gt04hDnVas5XxF0QEUREpmeTaZkxzQ5LKQOm7y4jQ7TlncWY4
+        CwUzRl81d7eH3eNVnrZP8aW3z6m9qe9fZfNwHd/fIMD7A5kChULH0hkeo6fiOEDAJNKFLNT5tq0v
+        Lje1bAVGtuT/88rqHxeMq6TcnPqBnaEM9TH/aSjUEHDB0hFKCnjuY+J9hgqT9wJfLrg8dIl05gAF
+        T6EvA5ZPgSnrnqBmxMRjLF3hbwr5tCKwTq5YoHDRfgXNspz9AgAA//8DAL80xHIIAQAA
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca46c291dc30979-MIA
+      - 7ca537f60f318db5-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
@@ -42,7 +43,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 12:01:00 GMT
+      - Sat, 20 May 2023 14:20:08 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -56,7 +57,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '123'
+      - '187'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -74,7 +75,7 @@ interactions:
       x-ratelimit-reset-tokens:
       - 0s
       x-request-id:
-      - 43eb711014a51dd411ad345d700877de
+      - b32b94e2268f606a7b1bd1e3d45bbe10
     status:
       code: 200
       message: OK

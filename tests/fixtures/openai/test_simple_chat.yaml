@@ -1,8 +1,7 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "gpt-3.5-turbo"},
-      {"role": "user", "content": "What is 2+2? Reply with just one number and no
-      punctuaction."}]}'
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "What
+      is 2+2? Reply with just one number and no punctuaction."}]}'
     headers:
       Accept:
       - '*/*'
@@ -11,7 +10,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '181'
+      - '133'
       Content-Type:
       - application/json
       User-Agent:
@@ -26,16 +25,16 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0SOwUrEMBRF937GXadDw3RqzVZRXLgVBpEhTZ7TjEleaN6IUPrvMqDO9nLu4SwI
-        HgZusuJSic3t8+N+fDn5h+j7pMtdP+Qn0vuYvu5fCQo8nsjJ72PjOJVIEjhDwc1khTyM7oduN3Rt
-        rxUSe4owOBZptptdI+d55KbdthoK52qPBLOgzJyKHIQ/KVeYrlW4qv9nrSAsNl45vSq4iYOjCvO2
-        IFH9U84cCQa21lDFZrkEchbKl/gOq8JHyKFOh5ls5QyDKlygELKnb5h2fV9vfgAAAP//AwAjnelq
-        HgEAAA==
+        H4sIAAAAAAAAA0SPTUsDMRRF9/6Mu86U+Wxr9oK6EXTTKlLSzGsndZIXklcsDPPfpaB2e7n3cO4E
+        10PDDkasj2Oxeno8PTTd5l2+t2/bunpJdNg0/vny2ncRCrw/kZXfxcKyjyOJ4wAFm8gI9dDVct12
+        93VbrhU89zRC4xilaBZdIee056JsygoK52yOBD0hJvZRdsJfFDJ0vVS4of/jSkFYzHjrrWYFO7Cz
+        lKE/JnjKf8jEI0HD5OyymCBXQQ5C4SrfYlY4uODysEtkMgdoZOHrQxd6ukCX8+d89wMAAP//AwDo
+        tSr0HgEAAA==
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca46c2f3a478daf-MIA
+      - 7ca537fb2d7321c1-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
@@ -45,7 +44,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 12:01:02 GMT
+      - Sat, 20 May 2023 14:20:09 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -59,7 +58,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '640'
+      - '482'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -71,13 +70,13 @@ interactions:
       x-ratelimit-remaining-requests:
       - '3499'
       x-ratelimit-remaining-tokens:
-      - '89962'
+      - '89968'
       x-ratelimit-reset-requests:
       - 17ms
       x-ratelimit-reset-tokens:
-      - 24ms
+      - 21ms
       x-request-id:
-      - 2d8a6acd1d55e431814b26170def8a10
+      - 31a9c0b9c14508119992bc919392870c
     status:
       code: 200
       message: OK

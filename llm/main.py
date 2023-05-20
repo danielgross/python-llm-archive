@@ -20,15 +20,16 @@ load_keys_from_cache()
 def complete(prompt, engine="openai:text-davinci-003", **kwargs):
     args = parse_args(engine, **kwargs)
     if args.service == "openai":
-        return openaiapi.complete(prompt, args.engine, **args.kwargs)
+        result = openaiapi.complete(prompt, args.engine, **args.kwargs)
     elif args.service == "anthropic":
-        return anthropicapi.complete(prompt, args.engine, **args.kwargs)
+        result = anthropicapi.complete(prompt, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
+    return result.strip()
 
 
 # Can also pass in system="Behave like a bunny rabbit" for system message.
-def chat(messages, engine="openai:text-davinci-003", **kwargs):
+def chat(messages, engine="openai:gpt-3.5-turbo", **kwargs):
     """Chat with the LLM API."""
     args = parse_args(engine, **kwargs)
     messages = structure_chat(messages)
@@ -41,23 +42,56 @@ def chat(messages, engine="openai:text-davinci-003", **kwargs):
     return result.strip()
 
 
-async def stream_chat(messages, engine="text-davinci-003", **kwargs):
-    """Chat with the LLM API."""
+def format_streaming_output(raw_tokens, stream_method, service, output_cache):
+    if stream_method == "default":
+        output_cache.append(raw_tokens)
+        return raw_tokens, output_cache
+    elif stream_method == "full" and service == "anthropic":
+        output_cache.append(raw_tokens)
+        return raw_tokens, output_cache
+    elif stream_method == "delta" and service == "openai":
+        output_cache.append(raw_tokens)
+        return raw_tokens, output_cache
+    elif stream_method == "delta" and service == "anthropic":
+        # "raw_tokens" contain the string repeated from start, and we
+        # want to yield only the new part.
+        # output_cache is a list of raw_tokens
+        streaming_output = raw_tokens[len(''.join(output_cache)):]
+        output_cache = [raw_tokens]
+        return streaming_output, output_cache
+    elif stream_method == "full" and service == "openai":
+        # Here the situation is reversed: raw_tokens contain only the
+        # new part, and we want to yield the full string.
+        streaming_output = ''.join(output_cache) + raw_tokens
+        output_cache.append(raw_tokens)
+        return streaming_output, output_cache
+    else:
+        raise ValueError(
+            f"Stream method {stream_method} is not supported for service {service}.")
+
+
+async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="default", **kwargs):
+    """Chat with the LLM API.
+    stream_method="default" uses the default streaming method for the engine. 
+    For OpenAI this will be "delta" and for Anthropic (which restreams the 
+    output on every `yield`, it would be "full".
+    """
     args = parse_args(engine, **kwargs)
     messages = structure_chat(messages)
     if args.service == "openai":
-        NotImplementedError("Not implemented yet.")
+        result = openaiapi.stream_chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.stream_chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
-    async for message in result:
-        yield message.strip()
 
-
-def embed(text, engine="text-davinci-003", **kwargs):
-    """Embed text using the LLM API."""
-    raise NotImplementedError("Embedding is not yet implemented.")
+    output_cache = []
+    async for raw_token in result:
+        token, output_cache = format_streaming_output(
+            raw_token, stream_method, args.service, output_cache)
+        if stream_method != "delta":
+            token = token.strip()
+        yield token
 
 
 def set_api_key(*args, **kwargs):

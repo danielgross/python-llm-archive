@@ -14,36 +14,40 @@ interactions:
     uri: https://api.anthropic.com/v1/complete
   response:
     body:
-      string: "data: {\"completion\": \" I don't actually have\", \"stop\": null,\
-        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\"\
+      string: "data: {\"completion\": \" I do\", \"stop\": null, \"stop_reason\":\
+        \ null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
         , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
-        : \" I don't actually have any favorite animal\", \"stop\": null, \"stop_reason\"\
-        : null, \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\"\
+        : \" I do not actually have any favorite\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
         , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
-        : \" I don't actually have any favorite animal breeds. I'm an\", \"stop\"\
-        : null, \"stop_reason\": null, \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\"\
+        : \" I do not actually have any favorite animal\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
         , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
-        : \" I don't actually have any favorite animal breeds. I'm an AI assistant\
-        \ created by An\", \"stop\": null, \"stop_reason\": null, \"truncated\": false,\
-        \ \"log_id\": \"775f160062168f43c8d7b274c15499\", \"model\": \"claude-v1\"\
-        , \"exception\": null}\r\n\r\ndata: {\"completion\": \" I don't actually have\
-        \ any favorite animal breeds. I'm an AI assistant created by Anthropic to\
-        \ be helpful\", \"stop\": null, \"stop_reason\": null, \"truncated\": false,\
-        \ \"log_id\": \"775f160062168f43c8d7b274c15499\", \"model\": \"claude-v1\"\
-        , \"exception\": null}\r\n\r\ndata: {\"completion\": \" I don't actually have\
-        \ any favorite animal breeds. I'm an AI assistant created by Anthropic to\
-        \ be helpful, harmless, and honest\", \"stop\": null, \"stop_reason\": null,\
-        \ \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\", \"\
-        model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
-        : \" I don't actually have any favorite animal breeds. I'm an AI assistant\
-        \ created by Anthropic to be helpful, harmless, and honest.\", \"stop\": null,\
-        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\"\
+        : \" I do not actually have any favorite animal breeds,\", \"stop\": null,\
+        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
         , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
-        : \" I don't actually have any favorite animal breeds. I'm an AI assistant\
-        \ created by Anthropic to be helpful, harmless, and honest.\", \"stop\": null,\
-        \ \"stop_reason\": \"max_tokens\", \"truncated\": false, \"log_id\": \"775f160062168f43c8d7b274c15499\"\
-        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: [DONE]\r\n\r\
-        \n"
+        : \" I do not actually have any favorite animal breeds, as\", \"stop\": null,\
+        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I do not actually have any favorite animal breeds, as I am an\", \"stop\"\
+        : null, \"stop_reason\": null, \"truncated\": false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\"\
+        , \"model\": \"claude-v1\", \"exception\": null}\r\n\r\ndata: {\"completion\"\
+        : \" I do not actually have any favorite animal breeds, as I am an AI assistant\
+        \ without\", \"stop\": null, \"stop_reason\": null, \"truncated\": false,\
+        \ \"log_id\": \"14f945b66b10a12390686cb206a254bf\", \"model\": \"claude-v1\"\
+        , \"exception\": null}\r\n\r\ndata: {\"completion\": \" I do not actually\
+        \ have any favorite animal breeds, as I am an AI assistant without personal\"\
+        , \"stop\": null, \"stop_reason\": null, \"truncated\": false, \"log_id\"\
+        : \"14f945b66b10a12390686cb206a254bf\", \"model\": \"claude-v1\", \"exception\"\
+        : null}\r\n\r\ndata: {\"completion\": \" I do not actually have any favorite\
+        \ animal breeds, as I am an AI assistant without personal preferences.\",\
+        \ \"stop\": null, \"stop_reason\": null, \"truncated\": false, \"log_id\"\
+        : \"14f945b66b10a12390686cb206a254bf\", \"model\": \"claude-v1\", \"exception\"\
+        : null}\r\n\r\ndata: {\"completion\": \" I do not actually have any favorite\
+        \ animal breeds, as I am an AI assistant without personal preferences.\",\
+        \ \"stop\": \"\\n\\nHuman:\", \"stop_reason\": \"stop_sequence\", \"truncated\"\
+        : false, \"log_id\": \"14f945b66b10a12390686cb206a254bf\", \"model\": \"claude-v1\"\
+        , \"exception\": null}\r\n\r\ndata: [DONE]\r\n\r\n"
     headers:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -52,7 +56,7 @@ interactions:
       Content-Type:
       - text/event-stream; charset=utf-8
       Date:
-      - Sat, 20 May 2023 12:03:51 GMT
+      - Sat, 20 May 2023 13:10:26 GMT
       Server:
       - Google Frontend
       Transfer-Encoding:
@@ -60,7 +64,7 @@ interactions:
       Via:
       - 1.1 google
       request-id:
-      - 775f160062168f43c8d7b274c15499
+      - 14f945b66b10a12390686cb206a254bf
       x-accel-buffering:
       - 'no'
     status:

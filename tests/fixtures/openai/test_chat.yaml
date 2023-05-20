@@ -1,8 +1,8 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "gpt-3.5-turbo"},
-      {"role": "user", "content": "hello"}, {"role": "assistant", "content": "how
-      are you?"}, {"role": "user", "content": "I''m good, thanks."}]}'
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "hello"},
+      {"role": "assistant", "content": "how are you?"}, {"role": "user", "content":
+      "I''m good, thanks."}]}'
     headers:
       Accept:
       - '*/*'
@@ -11,7 +11,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '226'
+      - '178'
       Content-Type:
       - application/json
       User-Agent:
@@ -26,16 +26,16 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0SOQUvDQBQG7/6K9bt42ZSUJLXsRUQo9uLFHiwiZbt5NmuTfUv2VQ0l/12K2l4H
-        ZpgjfA0D11hxXWyz2+VivS794mnJaRFnLw/D8Pm8J7lf1aVAg7cf5OTPmDjuYkviOUDD9WSFapjp
-        bF5W8zKv5hod19TCYBclKyZVJod+y1le5FNoHJLdEcwRsecuykZ4TyHBlIXGJX3G00JDWGx7JtVs
-        1HANe0cJ5vWIjtJ/s+eWYGBT8klsOM07DkLhdL9qrNwktTstK2HVkO2v1SN/KWeDWqpfSw18UMK1
-        He4warz74FOz6ckmDjBIwhEaPtT0DZOPb+PVDwAAAP//AwC9yHWfTwEAAA==
+        H4sIAAAAAAAAA0SOwUvDMBhH7/4V8Xfxko527abLxcMQnPMiiB5ERpZ+a7K1SUm+Mcfo/y5DndcH
+        7/FOcDUUjNVsur7NbheP2/lx/vzy7g/LzUvBYfcw9sv12xOXM0iE9ZYM/xojE7q+JXbBQ8JE0kw1
+        VDG9qyazcZVPJbpQUwuFpuesHE0y3sd1yPIyLyCxT7ohqBP6GLqeVxx25BPUeCbxn77gopLgwLq9
+        kKocJIwNzlCC+jiho/TXjKElKOiUXGLt+XwYPJM/379azTdJNOdlwUFY0vFaLJJgS5GE9ke2zjdi
+        IYz24qchDo7tPQaJjfMu2VUknYKHQuLQQ8L5mr6g8uFzuPoGAAD//wMADroqt1gBAAA=
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca46c1f2d6b8dd3-MIA
+      - 7ca537e98a9609ee-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
@@ -45,7 +45,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 12:01:00 GMT
+      - Sat, 20 May 2023 14:20:07 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -59,7 +59,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '1510'
+      - '1865'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -71,13 +71,13 @@ interactions:
       x-ratelimit-remaining-requests:
       - '3499'
       x-ratelimit-remaining-tokens:
-      - '89968'
+      - '89971'
       x-ratelimit-reset-requests:
       - 17ms
       x-ratelimit-reset-tokens:
-      - 21ms
+      - 18ms
       x-request-id:
-      - cffda39f7f202b61be5d3059ab037545
+      - 3b231ca372e950aef7afe26679e6e144
     status:
       code: 200
       message: OK

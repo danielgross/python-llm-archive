@@ -7,7 +7,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Client:
       - anthropic-python/0.2.8
       Connection:
@@ -17,12 +17,12 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.28.1
     method: POST
     uri: https://api.anthropic.com/v1/complete
   response:
     body:
-      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"84c8b466b851f45d31c8bd771df8fca3","model":"claude-v1","exception":null}'
+      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"9263af12a624261ace6d8ed6e3db552f","model":"claude-v1","exception":null}'
     headers:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -31,15 +31,15 @@ interactions:
       content-type:
       - application/json
       date:
-      - Sat, 20 May 2023 12:03:50 GMT
+      - Sat, 20 May 2023 13:10:29 GMT
       request-id:
-      - 84c8b466b851f45d31c8bd771df8fca3
+      - 9263af12a624261ace6d8ed6e3db552f
       server:
       - Google Frontend
       via:
       - 1.1 google
       x-cloud-trace-context:
-      - 84c8b466b851f45d31c8bd771df8fca3
+      - 9263af12a624261ace6d8ed6e3db552f
     status:
       code: 200
       message: OK

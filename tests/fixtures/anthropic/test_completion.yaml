@@ -6,7 +6,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -14,29 +14,29 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.30.0
+      - python-requests/2.28.1
     method: POST
     uri: https://api.anthropic.com/v1/complete
   response:
     body:
-      string: '{"completion":" Claude","stop":null,"stop_reason":"max_tokens","truncated":false,"log_id":"64b4105b10e3eb48988c2c4dc7abf2a","model":"claude-v1","exception":null}'
+      string: '{"completion":" Claude","stop":null,"stop_reason":"max_tokens","truncated":false,"log_id":"5470beac3a9dc758a58a173ca102f741","model":"claude-v1","exception":null}'
     headers:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Content-Length:
-      - '160'
+      - '162'
       content-type:
       - application/json
       date:
-      - Sat, 20 May 2023 12:03:49 GMT
+      - Sat, 20 May 2023 13:10:28 GMT
       request-id:
-      - 64b4105b10e3eb48988c2c4dc7abf2a
+      - 5470beac3a9dc758a58a173ca102f741
       server:
       - Google Frontend
       via:
       - 1.1 google
       x-cloud-trace-context:
-      - 064b4105b10e3eb48988c2c4dc7abf2a
+      - 5470beac3a9dc758a58a173ca102f741
     status:
       code: 200
       message: OK
