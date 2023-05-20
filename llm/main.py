@@ -8,7 +8,7 @@
 # Also try:
 # llm.setup_cache() and all requests will be cached
 
-from llm.utils.parsing import parse_args, structure_chat
+from llm.utils.parsing import parse_args, structure_chat, format_streaming_output
 from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
 from llm.api import anthropicapi, openaiapi
 
@@ -40,34 +40,6 @@ def chat(messages, engine="openai:gpt-3.5-turbo", **kwargs):
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
-
-
-def format_streaming_output(raw_tokens, stream_method, service, output_cache):
-    if stream_method == "default":
-        output_cache.append(raw_tokens)
-        return raw_tokens, output_cache
-    elif stream_method == "full" and service == "anthropic":
-        output_cache.append(raw_tokens)
-        return raw_tokens, output_cache
-    elif stream_method == "delta" and service == "openai":
-        output_cache.append(raw_tokens)
-        return raw_tokens, output_cache
-    elif stream_method == "delta" and service == "anthropic":
-        # "raw_tokens" contain the string repeated from start, and we
-        # want to yield only the new part.
-        # output_cache is a list of raw_tokens
-        streaming_output = raw_tokens[len(''.join(output_cache)):]
-        output_cache = [raw_tokens]
-        return streaming_output, output_cache
-    elif stream_method == "full" and service == "openai":
-        # Here the situation is reversed: raw_tokens contain only the
-        # new part, and we want to yield the full string.
-        streaming_output = ''.join(output_cache) + raw_tokens
-        output_cache.append(raw_tokens)
-        return streaming_output, output_cache
-    else:
-        raise ValueError(
-            f"Stream method {stream_method} is not supported for service {service}.")
 
 
 async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="default", **kwargs):
