@@ -37,6 +37,7 @@ llm.multi_stream_chat(["what is 2+2"],
 
 ## Multi Stream Chat In Action
 Given this feature is very lively, I've included a video of it in action.
+
 https://github.com/danielgross/python-llm/assets/279531/d68eb843-7a32-4ffe-8ac2-b06b81e764b0
 
 ## Installation
