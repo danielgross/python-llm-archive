@@ -13,9 +13,6 @@ llm.set_api_key(openai="sk-...", anthropic="sk-...")
 # Chat
 llm.chat(["what is 2+2"]) # 4. Uses GPT-3 by default if key is provided.
 llm.chat(["what is 2+2"], engine="anthropic:claude-instant-v1") # 4.
-llm.stream_chat(["what is 2+2"]) # 4. 
-llm.multi_stream_chat(["what is 2+2"], engines=["anthropic:claude-instant-v1", 
-                      "openai:gpt-3.5-turbo"])
 
 # Completion
 llm.complete("hello, I am") # A GPT model.
@@ -25,8 +22,21 @@ llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Claude.
 # Back-and-forth chat [human, assistant, human]
 llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Why did chicken cross road?
 
+# Streaming chat
+llm.stream_chat(["what is 2+2"]) # 4. 
+llm.multi_stream_chat(["what is 2+2"], 
+                      engines=
+                      ["anthropic:claude-instant-v1", 
+                      "openai:gpt-3.5-turbo"]) 
+# Results will stream back to you from both models at the same time like this:
+# ["anthropic:claude-instant-v1", "hi"], ["openai:gpt-3.5-turbo", "howdy"], 
+# ["anthropic:claude-instant-v1", " there"] ["openai:gpt-3.5-turbo", " my friend"]
+
 # Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
 ```
+
+## Multi Stream Chat In Action
+https://github.com/danielgross/python-llm/assets/279531/d68eb843-7a32-4ffe-8ac2-b06b81e764b0
 
 ## Installation
 
