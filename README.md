@@ -65,3 +65,9 @@ The JSON should look like:
   "anthropic": "sk-..."
 }
 ```
+
+## TODO 
+- [ ] Caching! 
+- [ ] More LLM vendors!
+- [ ] More tests!
+
