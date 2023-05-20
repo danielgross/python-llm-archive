@@ -8,7 +8,7 @@ with open('README.md') as f:
 
 setup(
     name='python-llm',
-    version='0.1.4',
+    version='0.1.5',
     author='Daniel Gross',
     author_email='d@dcgross.com',
     description='An LLM wrapper for Humans',

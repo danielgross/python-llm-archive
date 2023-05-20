@@ -11,8 +11,8 @@ import llm
 llm.set_api_key(openai="sk-...", anthropic="sk-...")
 
 # Chat
-llm.chat(["what is 2+2"]) # 4. Uses GPT-3 by default if key is provided.
-llm.chat(["what is 2+2"], engine="anthropic:claude-instant-v1") # 4.
+llm.chat("what is 2+2") # 4. Uses GPT-3 by default if key is provided.
+llm.chat("what is 2+2", engine="anthropic:claude-instant-v1") # 4.
 
 # Completion
 llm.complete("hello, I am") # A GPT model.

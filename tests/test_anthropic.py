@@ -22,6 +22,8 @@ class TestClaudeCompletions(unittest.TestCase):
     @vcr.use_cassette("tests/fixtures/anthropic/test_simple_chat.yaml", filter_headers=['authorization', 'x-api-key'])
     def test_simple_chat(self):
         self.assertEqual(llm.chat(
+            "What is 2+2? Reply with just one number and no punctuation.", engine="anthropic:claude-v1"), "4")
+        self.assertEqual(llm.chat(
             ["What is 2+2? Reply with just one number and no punctuation."], engine="anthropic:claude-v1"), "4")
 
     @vcr.use_cassette("tests/fixtures/anthropic/test_chat.yaml", filter_headers=['authorization', 'x-api-key'])

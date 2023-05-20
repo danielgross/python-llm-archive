@@ -12,6 +12,9 @@ def parse_args(engine, **kwargs):
 
 def structure_chat(messages):
     """Structure chat messages."""
+    # if we got a plan string, wrap it in a list
+    if isinstance(messages, str):
+        messages = [messages]
     if isinstance(messages[0], str):
         # recreate as dictionary where "role" is either "assistant" or "user"
         messages = [{"role": "user" if i % 2 == 0 else "assistant",

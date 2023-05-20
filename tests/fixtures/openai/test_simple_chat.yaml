@@ -6,7 +6,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -25,26 +25,25 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0SPTUsDMRRF9/6Mu86U+Wxr9oK6EXTTKlLSzGsndZIXklcsDPPfpaB2e7n3cO4E
-        10PDDkasj2Oxeno8PTTd5l2+t2/bunpJdNg0/vny2ncRCrw/kZXfxcKyjyOJ4wAFm8gI9dDVct12
-        93VbrhU89zRC4xilaBZdIee056JsygoK52yOBD0hJvZRdsJfFDJ0vVS4of/jSkFYzHjrrWYFO7Cz
-        lKE/JnjKf8jEI0HD5OyymCBXQQ5C4SrfYlY4uODysEtkMgdoZOHrQxd6ukCX8+d89wMAAP//AwDo
-        tSr0HgEAAA==
+        IXQEACC+/Zx+Rj6dEkWojR0A5qPqFXRw4HhLNA/GYYCBSBRIgHmDnYXGQ4ZavK5gXJ4nd/mpb1AN
+        Jv3q3JyH57lJlg+fF/Hg+6k/s9NExiDI+X27OJWF1gK85A9CXPmy2xWclHVexk1dF4SfXG9fMB7K
+        BVlYBM6bswRxFicgeHt63MAtlJGfcgcnn9vfgtOScJGf+p4X1BLC/P/E9aojpOnDgjctDBpf4BZG
+        vjcwTta+rDv9HQjtdWTk6Ag9bOXw8+oBDOtEgTC0P4Ljbtf1DAM=
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca537fb2d7321c1-MIA
+      - 7ca6e2a91df50975-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
       - keep-alive
       Content-Encoding:
-      - gzip
+      - br
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 14:20:09 GMT
+      - Sat, 20 May 2023 19:11:26 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -58,7 +57,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '482'
+      - '410'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -76,7 +75,87 @@ interactions:
       x-ratelimit-reset-tokens:
       - 21ms
       x-request-id:
-      - 31a9c0b9c14508119992bc919392870c
+      - 9a52ede81934591dba7ebbeb8a45d881
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "What
+      is 2+2? Reply with just one number and no punctuaction."}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAI/v1 PythonBindings/0.27.2
+      X-OpenAI-Client-User-Agent:
+      - '{"bindings_version": "0.27.2", "httplib": "requests", "lang": "python", "lang_version":
+        "3.10.9", "platform": "macOS-13.2-arm64-arm-64bit", "publisher": "openai",
+        "uname": "Darwin 22.3.0 Darwin Kernel Version 22.3.0: Thu Jan  5 20:50:36
+        PST 2023; root:xnu-8792.81.2~2/RELEASE_ARM64_T6020 arm64 arm"}'
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        IXQEACAWrpmvkaNzROvq4AFVEUNHBDo4cLwlmgfjMMBAJAokwLzBzkLjIUM9HmcQTvdDcRKaG9H8
+        YxZP/5cV76bfXc4j7//olJ7/p9/5OxjU8Xk5FSozrQV4KAmGuPJllzPICWM/tJM4DhmEOl84CDdd
+        GJ4ZGEWZHZVhe7YDhjI/3C6gHjpTQhe7Qr0uMge5IcNJCc3PC2oOw/z/xPVoZEjTRw5a9TBofIF6
+        ZIpfQDjk+SMvDrIAQ3sdCT5Ghh62svt59QBCXigNhqH9EWSPm3FiAAM=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7ca6e2ac4aca0975-MIA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - br
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 20 May 2023 19:11:26 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - dgorg
+      openai-processing-ms:
+      - '732'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '89968'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 21ms
+      x-request-id:
+      - 42b161389227ec015e81226b89ee22fd
     status:
       code: 200
       message: OK

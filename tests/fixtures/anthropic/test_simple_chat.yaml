@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"prompt": "\n\nHuman: What is 2+2? Reply with just one number and no punctuation.\n\nAssistant:",
       "stop_sequences": ["\n\nHuman:"], "model": "claude-v1", "max_tokens_to_sample":
-      30}'
+      100}'
     headers:
       Accept:
       - application/json
@@ -13,7 +13,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '182'
+      - '183'
       Content-Type:
       - application/json
       User-Agent:
@@ -22,7 +22,7 @@ interactions:
     uri: https://api.anthropic.com/v1/complete
   response:
     body:
-      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"9263af12a624261ace6d8ed6e3db552f","model":"claude-v1","exception":null}'
+      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"449dfaaebe392ea4b2109708d6738b38","model":"claude-v1","exception":null}'
     headers:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -31,15 +31,59 @@ interactions:
       content-type:
       - application/json
       date:
-      - Sat, 20 May 2023 13:10:29 GMT
+      - Sat, 20 May 2023 19:13:11 GMT
       request-id:
-      - 9263af12a624261ace6d8ed6e3db552f
+      - 449dfaaebe392ea4b2109708d6738b38
       server:
       - Google Frontend
       via:
       - 1.1 google
       x-cloud-trace-context:
-      - 9263af12a624261ace6d8ed6e3db552f
+      - 449dfaaebe392ea4b2109708d6738b38
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"prompt": "\n\nHuman: What is 2+2? Reply with just one number and no punctuation.\n\nAssistant:",
+      "stop_sequences": ["\n\nHuman:"], "model": "claude-v1", "max_tokens_to_sample":
+      100}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Client:
+      - anthropic-python/0.2.8
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://api.anthropic.com/v1/complete
+  response:
+    body:
+      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"254871ca9e297d19df904b8d09d7f98e","model":"claude-v1","exception":null}'
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Content-Length:
+      - '168'
+      content-type:
+      - application/json
+      date:
+      - Sat, 20 May 2023 19:13:12 GMT
+      request-id:
+      - 254871ca9e297d19df904b8d09d7f98e
+      server:
+      - Google Frontend
+      via:
+      - 1.1 google
+      x-cloud-trace-context:
+      - 254871ca9e297d19df904b8d09d7f98e
     status:
       code: 200
       message: OK
