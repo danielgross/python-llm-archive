@@ -2,7 +2,7 @@
 
 ![Tests](https://github.com/danielgross/python-llm/actions/workflows/tests.yml/badge.svg)
 
-The vision is to be as simple as python-requests, but for LLMs. This library supports models from OpenAI and Anthropic, with more coming soon.
+The simplicity and elegance of python-requests, but for LLMs. This library supports models from OpenAI and Anthropic. I will try to add more when I have the time, and am warmly accepting pull requests if that's of interest.
 
 ## Usage
 
@@ -36,6 +36,7 @@ llm.multi_stream_chat(["what is 2+2"],
 ```
 
 ## Multi Stream Chat In Action
+Given this feature is very lively, I've included a video of it in action.
 https://github.com/danielgross/python-llm/assets/279531/d68eb843-7a32-4ffe-8ac2-b06b81e764b0
 
 ## Installation
