@@ -58,12 +58,19 @@ async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="de
         raise ValueError(f"Engine {engine} is not supported.")
 
     output_cache = []
-    count = 0
+    initial_response_done = False
     async for raw_token in result:
         token, output_cache = format_streaming_output(
             raw_token, stream_method, args.service, output_cache)
-        if stream_method != "delta" and count == 0:
-            token = token.lstrip()
+        if args.service == "anthropic":
+            # First token of Anthropic output always starts with an empty space.
+            # If we're in delta mode, strip the space only if this is the first token out.
+            # If we're in full mode, strip the space every time.
+            if stream_method == "delta" and not initial_response_done:
+                token = token.lstrip()
+            elif stream_method == "default" or stream_method == "full":
+                token = token.lstrip()
+            initial_response_done = True
         yield token
 
 

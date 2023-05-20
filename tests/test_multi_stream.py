@@ -15,6 +15,6 @@ class TestAnthropicStreaming(asynctest.TestCase):
             results[engine].append(response)
         final = {k: "".join(v[-1]) for k, v in results.items()}
         self.assertTrue(final["anthropic:claude-instant-v1"].startswith(
-            "Here is a poem I wrote about the number pi"))
+            "Here is a poem I wrote about the number pi"), final["anthropic:claude-instant-v1"])
         self.assertTrue(
-            final["openai:gpt-3.5-turbo"].startswith("Pi, the circle’s constant"))
+            final["openai:gpt-3.5-turbo"].startswith("Pi, the circle’s constant"), final["openai:gpt-3.5-turbo"])

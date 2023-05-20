@@ -29,7 +29,7 @@ def structure_chat(messages):
 
 def format_streaming_output(raw_tokens, stream_method, service, output_cache):
     if stream_method == "default":
-        output_cache.append(raw_tokens)
+        # Don't even bother building a cache.
         return raw_tokens, output_cache
     elif stream_method == "full" and service == "anthropic":
         output_cache.append(raw_tokens)

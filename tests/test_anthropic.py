@@ -60,7 +60,7 @@ class TestAnthropicStreaming(asynctest.TestCase):
         responses = []
         async for response in llm.stream_chat(messages, engine="anthropic:claude-v1", stream_method="delta"):
             responses.append(response)
-        self.assertEqual(responses[0], " I'm")
+        self.assertEqual(responses[0], "I'm")
         self.assertEqual(responses[1], " an")
         self.assertTrue("".join(responses).startswith(
-            " I'm an AI assistant created by Anthropic to be helpful, harmless, and honest."), "".join(responses))
+            "I'm an AI assistant created by Anthropic to be helpful, harmless, and honest."), "".join(responses))
