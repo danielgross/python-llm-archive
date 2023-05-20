@@ -70,7 +70,7 @@ def chat(messages, engine="claude-v1", system=None, max_tokens_to_sample=30, **k
     return resp["completion"]
 
 
-async def stream_chat(messages, engine="claude-v1", system=None, max_tokens_to_sample=30, **kwargs):
+async def stream_chat(messages, engine="claude-v1", system=None, max_tokens_to_sample=100, **kwargs):
     c = client()
     prompt = format_chat_messages(messages)
     response = await c.acompletion_stream(

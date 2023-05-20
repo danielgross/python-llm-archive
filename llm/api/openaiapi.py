@@ -40,10 +40,12 @@ async def stream_chat(messages, engine, system=None, **kwargs):
     if system is not None:
         messages = [{"role": "system", "content": system}] + messages
     logger.debug(f"Chatting with {engine} using messages: {messages}")
+
     result = openai.ChatCompletion.create(
         model=engine,
         messages=messages,
-        stream=True
+        stream=True,
+        **kwargs
     )
     for chunk in result:
         if chunk.choices[0].delta.get('content') != None:

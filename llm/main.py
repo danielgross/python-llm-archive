@@ -11,7 +11,7 @@
 from llm.utils.parsing import parse_args, structure_chat, format_streaming_output
 from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
 from llm.api import anthropicapi, openaiapi
-
+import asyncio
 
 # Try loading keys from cache
 load_keys_from_cache()
@@ -64,6 +64,29 @@ async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="de
         if stream_method != "delta":
             token = token.strip()
         yield token
+
+
+async def multi_stream_chat(messages, engines=["anthropic:claude-instant-v1", "openai:gpt-3.5-turbo"], **kwargs):
+    """Chat with multiple LLM APIs simultaneously.
+
+    engines should be a list of engine strings, e.g. 
+    ["openai:gpt-3.5-turbo", "anthropic:claude-v1"]
+
+    The responses will be yielded in the order they are received from the engines.
+    Each response is returned as a tuple of the form (engine_name, response).
+    """
+    # Create a list of streams, each one labeled with the name of the engine
+    streams = [(engine, stream_chat(messages, engine, "full", **kwargs))
+               for engine in engines]
+
+    while streams:  # While there are still streams left
+        for i, (engine, stream) in enumerate(streams):
+            try:
+                result = await stream.__anext__()
+                # Yield the result along with the engine name
+                yield (engine, result)
+            except StopAsyncIteration:  # The stream has ended
+                del streams[i]  # Remove it from the list
 
 
 def set_api_key(*args, **kwargs):

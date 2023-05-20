@@ -5,6 +5,8 @@ def parse_args(engine, **kwargs):
     """Parse args."""
     assert ":" in engine, "Engine must be in the format 'engine:args', as in openai:text-davinci-003"
     service, engine = engine.split(':', 1)
+    if service == "anthropic":
+        kwargs["max_tokens_to_sample"] = kwargs.pop("max_tokens", 100)
     return collections.namedtuple("Args", ["service", "engine", "kwargs"])(service, engine, kwargs)
 
 

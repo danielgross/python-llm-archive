@@ -1,0 +1,168 @@
+interactions:
+- request:
+    body: '{"stream": true, "prompt": "\n\nHuman: Write a poem about the number pi.\n\nAssistant:",
+      "stop_sequences": ["\n\nHuman:"], "max_tokens_to_sample": 10, "model": "claude-instant-v1"}'
+    headers:
+      Accept:
+      - application/json
+      Client:
+      - anthropic-python/0.2.8
+      Content-Type:
+      - application/json
+    method: post
+    uri: https://api.anthropic.com/v1/complete
+  response:
+    body:
+      string: "data: {\"completion\": \" Here is a poem\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\"\
+        , \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: {\"\
+        completion\": \" Here is a poem I\", \"stop\": null, \"stop_reason\": null,\
+        \ \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\",\
+        \ \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: {\"\
+        completion\": \" Here is a poem I wrote\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\"\
+        , \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: {\"\
+        completion\": \" Here is a poem I wrote about the\", \"stop\": null, \"stop_reason\"\
+        : null, \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\"\
+        , \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: {\"\
+        completion\": \" Here is a poem I wrote about the number pi\", \"stop\": null,\
+        \ \"stop_reason\": null, \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\"\
+        , \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: {\"\
+        completion\": \" Here is a poem I wrote about the number pi\", \"stop\": null,\
+        \ \"stop_reason\": \"max_tokens\", \"truncated\": false, \"log_id\": \"f1ef089ce4dfdca9d54e51f1b239b445\"\
+        , \"model\": \"claude-instant-v1\", \"exception\": null}\r\n\r\ndata: [DONE]\r\
+        \n\r\n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Date:
+      - Sat, 20 May 2023 16:25:51 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 google
+      request-id:
+      - f1ef089ce4dfdca9d54e51f1b239b445
+      x-accel-buffering:
+      - 'no'
+    status:
+      code: 200
+      message: OK
+    url: https://api.anthropic.com/v1/complete
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
+      a poem about the number pi."}], "stream": true, "max_tokens": 10}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '140'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAI/v1 PythonBindings/0.27.2
+      X-OpenAI-Client-User-Agent:
+      - '{"bindings_version": "0.27.2", "httplib": "requests", "lang": "python", "lang_version":
+        "3.10.9", "platform": "macOS-13.2-arm64-arm-64bit", "publisher": "openai",
+        "uname": "Darwin 22.3.0 Darwin Kernel Version 22.3.0: Thu Jan  5 20:50:36
+        PST 2023; root:xnu-8792.81.2~2/RELEASE_ARM64_T6020 arm64 arm"}'
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: "data: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\"Pi\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\",\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\" the\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\" circle\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\"\u2019s\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\" constant\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\" friend\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\",\\n\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\"A\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{\"content\":\" number\"},\"index\":0,\"finish_reason\"\
+        :null}]}\n\ndata: {\"id\":\"chatcmpl-7IJgurkSTpTFaZZ5ToMkHDMwYU0h4\",\"object\"\
+        :\"chat.completion.chunk\",\"created\":1684599952,\"model\":\"gpt-3.5-turbo-0301\"\
+        ,\"choices\":[{\"delta\":{},\"index\":0,\"finish_reason\":\"length\"}]}\n\n\
+        data: [DONE]\n\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7ca5f022885a67d2-MIA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/event-stream
+      Date:
+      - Sat, 20 May 2023 16:25:52 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - dgorg
+      openai-processing-ms:
+      - '606'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '89979'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 13ms
+      x-request-id:
+      - a1a41913e4cf3b3af476ced0c16f02a1
+    status:
+      code: 200
+      message: OK
+version: 1
