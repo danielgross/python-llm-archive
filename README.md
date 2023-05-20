@@ -13,6 +13,9 @@ llm.set_api_key(openai="sk-...", anthropic="sk-...")
 # Chat
 llm.chat(["what is 2+2"]) # 4. Uses GPT-3 by default if key is provided.
 llm.chat(["what is 2+2"], engine="anthropic:claude-instant-v1") # 4.
+llm.stream_chat(["what is 2+2"]) # 4. 
+llm.multi_stream_chat(["what is 2+2"], engines=["anthropic:claude-instant-v1", 
+                      "openai:gpt-3.5-turbo"])
 
 # Completion
 llm.complete("hello, I am") # A GPT model.
