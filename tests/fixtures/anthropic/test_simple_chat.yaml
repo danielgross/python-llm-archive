@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: '{"prompt": "\n\nHuman: What is 2+2? Reply with just one number and no punctuation.\n\nAssistant:",
+      "stop_sequences": ["\n\nHuman:"], "model": "claude-v1", "max_tokens_to_sample":
+      30}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Client:
+      - anthropic-python/0.2.8
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '182'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.30.0
+    method: POST
+    uri: https://api.anthropic.com/v1/complete
+  response:
+    body:
+      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"84c8b466b851f45d31c8bd771df8fca3","model":"claude-v1","exception":null}'
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Content-Length:
+      - '168'
+      content-type:
+      - application/json
+      date:
+      - Sat, 20 May 2023 12:03:50 GMT
+      request-id:
+      - 84c8b466b851f45d31c8bd771df8fca3
+      server:
+      - Google Frontend
+      via:
+      - 1.1 google
+      x-cloud-trace-context:
+      - 84c8b466b851f45d31c8bd771df8fca3
+    status:
+      code: 200
+      message: OK
+version: 1

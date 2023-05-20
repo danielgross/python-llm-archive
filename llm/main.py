@@ -10,7 +10,7 @@
 
 from llm.utils.parsing import parse_args, structure_chat
 from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
-from llm.api import openaiapi, claude
+from llm.api import anthropicapi, openaiapi
 
 
 # Try loading keys from cache
@@ -22,7 +22,7 @@ def complete(prompt, engine="openai:text-davinci-003", **kwargs):
     if args.service == "openai":
         return openaiapi.complete(prompt, args.engine, **args.kwargs)
     elif args.service == "anthropic":
-        return claude.complete(prompt, args.engine, **args.kwargs)
+        return anthropicapi.complete(prompt, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
 
@@ -35,7 +35,7 @@ def chat(messages, engine="openai:text-davinci-003", **kwargs):
     if args.service == "openai":
         result = openaiapi.chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
-        result = claude.chat(messages, args.engine, **args.kwargs)
+        result = anthropicapi.chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
@@ -48,7 +48,7 @@ async def stream_chat(messages, engine="text-davinci-003", **kwargs):
     if args.service == "openai":
         NotImplementedError("Not implemented yet.")
     elif args.service == "anthropic":
-        result = claude.stream_chat(messages, args.engine, **args.kwargs)
+        result = anthropicapi.stream_chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     async for message in result:

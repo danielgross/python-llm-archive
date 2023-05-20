@@ -1,19 +1,16 @@
 interactions:
 - request:
-    body: '{"prompt": "\n\nHuman: what is 2+2? Reply with just one number.\n\nAssistant:",
-      "stop_sequences": ["\n\nHuman:"], "model": "claude-v1", "max_tokens_to_sample":
-      30}'
+    body: '{"prompt": "Hello, my name is", "model": "claude-v1", "max_tokens_to_sample":
+      1}'
     headers:
       Accept:
-      - application/json
+      - '*/*'
       Accept-Encoding:
       - gzip, deflate
-      Client:
-      - anthropic-python/0.2.8
       Connection:
       - keep-alive
       Content-Length:
-      - '163'
+      - '80'
       Content-Type:
       - application/json
       User-Agent:
@@ -22,24 +19,24 @@ interactions:
     uri: https://api.anthropic.com/v1/complete
   response:
     body:
-      string: '{"completion":" 4","stop":"\n\nHuman:","stop_reason":"stop_sequence","truncated":false,"log_id":"44cf00755d04f52cbfd8bb32037bc7c9","model":"claude-v1","exception":null}'
+      string: '{"completion":" Claude","stop":null,"stop_reason":"max_tokens","truncated":false,"log_id":"64b4105b10e3eb48988c2c4dc7abf2a","model":"claude-v1","exception":null}'
     headers:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Content-Length:
-      - '168'
+      - '160'
       content-type:
       - application/json
       date:
-      - Sun, 14 May 2023 22:53:22 GMT
+      - Sat, 20 May 2023 12:03:49 GMT
       request-id:
-      - 44cf00755d04f52cbfd8bb32037bc7c9
+      - 64b4105b10e3eb48988c2c4dc7abf2a
       server:
       - Google Frontend
       via:
       - 1.1 google
       x-cloud-trace-context:
-      - 44cf00755d04f52cbfd8bb32037bc7c9
+      - 064b4105b10e3eb48988c2c4dc7abf2a
     status:
       code: 200
       message: OK
