@@ -25,15 +25,15 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0SOzUrEMBRG9z7Gt04hDnVas5XxF0QEUREpmeTaZkxzQ5LKQOm7y4jQ7TlncWY4
-        CwUzRl81d7eH3eNVnrZP8aW3z6m9qe9fZfNwHd/fIMD7A5kChULH0hkeo6fiOEDAJNKFLNT5tq0v
-        Lje1bAVGtuT/88rqHxeMq6TcnPqBnaEM9TH/aSjUEHDB0hFKCnjuY+J9hgqT9wJfLrg8dIl05gAF
-        T6EvA5ZPgSnrnqBmxMRjLF3hbwr5tCKwTq5YoHDRfgXNspz9AgAA//8DAL80xHIIAQAA
+        H4sIAAAAAAAAA0SOzUrEMBRG9z7Gt06hI+NMzQs4/owIrqxISZNrGyfNjc2tDJS+u4wI3Z5zFmeG
+        d9CwQwrF/v74Nkl9nB6l/m4fnk8vdcxDezCvd9snKHD7RVagIXSWxvKQAonnCAU7khFy0Jtdtd1t
+        ytuqUhjYUfjPC2d+fLS+KMvrS9+zt5Sh3+c/DY0bKPjo6AxdKgTu0shtho5TCAqfPvrcNyOZzBEa
+        gWInPZYPhSmbjqBnpJGHJI3wiWK+rCiskytWEBYTVrBflqtfAAAA//8DALLL02cIAQAA
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca537f60f318db5-MIA
+      - 7ca6fd95d9f0d9fd-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
@@ -43,7 +43,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 14:20:08 GMT
+      - Sat, 20 May 2023 19:29:48 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -57,7 +57,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '187'
+      - '98'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -75,7 +75,7 @@ interactions:
       x-ratelimit-reset-tokens:
       - 0s
       x-request-id:
-      - b32b94e2268f606a7b1bd1e3d45bbe10
+      - 8a6f61d50bb9623515264625277efbfc
     status:
       code: 200
       message: OK

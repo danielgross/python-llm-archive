@@ -6,7 +6,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -25,25 +25,26 @@ interactions:
   response:
     body:
       string: !!binary |
-        IXQEACC+/Zx+Rj6dEkWojR0A5qPqFXRw4HhLNA/GYYCBSBRIgHmDnYXGQ4ZavK5gXJ4nd/mpb1AN
-        Jv3q3JyH57lJlg+fF/Hg+6k/s9NExiDI+X27OJWF1gK85A9CXPmy2xWclHVexk1dF4SfXG9fMB7K
-        BVlYBM6bswRxFicgeHt63MAtlJGfcgcnn9vfgtOScJGf+p4X1BLC/P/E9aojpOnDgjctDBpf4BZG
-        vjcwTta+rDv9HQjtdWTk6Ag9bOXw8+oBDOtEgTC0P4Ljbtf1DAM=
+        H4sIAAAAAAAAA0SOwUrDQBRF937GXU9KYmvazk7oolUEXShGKWUyeW2mSeYNmRcRQv5dCmq3l3MP
+        Z4SroGFrI7YLbbLcPRVfhdu8P38U293rOQ8vD0N5n741zeMRClyeycrvY2a5Cy2JYw8F25MRqqCz
+        fLXIs3S9Wit0XFELjVOQZD67S2ToS07SeZpBYYjmRNAjQs9dkINwQz5C3+YKV/X/nCkIi2mv3HJS
+        sDU7SxH6c0RH8U/Zc0vQMDG6KMbLJZC9kL/ELzApHJ13sT70ZCJ7aEThAAXnK/qGTqf9dPMDAAD/
+        /wMAuVynkh4BAAA=
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca6e2a91df50975-MIA
+      - 7ca6fd9bce2767e7-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
       - keep-alive
       Content-Encoding:
-      - br
+      - gzip
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 19:11:26 GMT
+      - Sat, 20 May 2023 19:29:50 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -57,7 +58,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '410'
+      - '602'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -75,7 +76,7 @@ interactions:
       x-ratelimit-reset-tokens:
       - 21ms
       x-request-id:
-      - 9a52ede81934591dba7ebbeb8a45d881
+      - 4efd9e88b2679fd6b577d60f53e297ad
     status:
       code: 200
       message: OK
@@ -86,7 +87,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -105,25 +106,26 @@ interactions:
   response:
     body:
       string: !!binary |
-        IXQEACAWrpmvkaNzROvq4AFVEUNHBDo4cLwlmgfjMMBAJAokwLzBzkLjIUM9HmcQTvdDcRKaG9H8
-        YxZP/5cV76bfXc4j7//olJ7/p9/5OxjU8Xk5FSozrQV4KAmGuPJllzPICWM/tJM4DhmEOl84CDdd
-        GJ4ZGEWZHZVhe7YDhjI/3C6gHjpTQhe7Qr0uMge5IcNJCc3PC2oOw/z/xPVoZEjTRw5a9TBofIF6
-        ZIpfQDjk+SMvDrIAQ3sdCT5Ghh62svt59QBCXigNhqH9EWSPm3FiAAM=
+        H4sIAAAAAAAAA0SOwUrDQBRF937GXU9KYmJiZ12QQuvOiIiU6eSZjM3MGzKvqIT8uxTUbi/nHs4M
+        10HDDkasj2PWbPcvn/3ztt2UD1VJ35udb82jNNKapx0U+PhBVn4fK8s+jiSOAxTsREaogy7q+6ou
+        8vU6V/Dc0QiNPkpWru4yOU9HzvIyL6BwTqYn6BlxYh/lIHyikKBva4Wr+n8uFITFjFeuWRTswM5S
+        gn6d4Sn9KSceCRomJZfEBLkEchAKl/gKi8K7Cy4Nh4lM4gCNJByh4EJHX9D58rbc/AAAAP//AwAX
+        FG/6HgEAAA==
     headers:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 7ca6e2ac4aca0975-MIA
+      - 7ca6fda01e5867e7-MIA
       Cache-Control:
       - no-cache, must-revalidate
       Connection:
       - keep-alive
       Content-Encoding:
-      - br
+      - gzip
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 May 2023 19:11:26 GMT
+      - Sat, 20 May 2023 19:29:50 GMT
       Server:
       - cloudflare
       Transfer-Encoding:
@@ -137,7 +139,7 @@ interactions:
       openai-organization:
       - dgorg
       openai-processing-ms:
-      - '732'
+      - '576'
       openai-version:
       - '2020-10-01'
       strict-transport-security:
@@ -149,13 +151,13 @@ interactions:
       x-ratelimit-remaining-requests:
       - '3499'
       x-ratelimit-remaining-tokens:
-      - '89968'
+      - '89967'
       x-ratelimit-reset-requests:
       - 17ms
       x-ratelimit-reset-tokens:
       - 21ms
       x-request-id:
-      - 42b161389227ec015e81226b89ee22fd
+      - 3fe588f6a5696eee6017dd0f94dfee4b
     status:
       code: 200
       message: OK

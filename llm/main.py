@@ -58,11 +58,12 @@ async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="de
         raise ValueError(f"Engine {engine} is not supported.")
 
     output_cache = []
+    count = 0
     async for raw_token in result:
         token, output_cache = format_streaming_output(
             raw_token, stream_method, args.service, output_cache)
-        if stream_method != "delta":
-            token = token.strip()
+        if stream_method != "delta" and count == 0:
+            token = token.lstrip()
         yield token
 
 
