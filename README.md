@@ -22,12 +22,33 @@ llm.complete("hello, I am ", engine="anthropic:claude-instant-v1") # Claude.
 # Back-and-forth chat [human, assistant, human]
 llm.chat(["hi", "hi there, how are you?", "good, tell me a joke"]) # Why did chicken cross road?
 
-# Embedding
-llm.embed(open("harrypotter.txt").read()).tsne() # (I haven't implemented this yet.)
-
 # Engines are in the provider:model format, as in openai:gpt-4, or anthropic:claude-instant-v1.
 ```
 
 ## Installation
 
 To install `python-llm`, use pip: ```pip install python-llm```.
+
+## Configuration
+You can set API keys in a few ways:
+1. Through environment variables (you can also set a `.env` file).
+```bash
+export OPENAI_API_KEY=sk_...
+export ANTHROPIC_API_KEY=sk_...
+```
+2. By calling the method manually:
+```python
+import llm
+llm.set_api_key(openai="sk-...", anthropic="sk-...")
+```
+3. By passing a JSON file like this:
+```python
+llm.set_api_key("path/to/api_keys.json")
+```
+The JSON should look like:
+```json
+{
+  "openai": "sk-...",
+  "anthropic": "sk-..."
+}
+```
