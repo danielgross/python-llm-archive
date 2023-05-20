@@ -22,8 +22,9 @@ def configure_api_keys(*args, **kwargs) -> None:
     """
 
     if args and len(args) > 1 and not isinstance(args[0], str):
-        raise ValueError("Only one positional argument (str) is allowed for filepath.")
-    
+        raise ValueError(
+            "Only one positional argument (str) is allowed for filepath.")
+
     # load api keys from a json filepath
     elif args and len(args) == 1 and isinstance(args[0], str):
         filepath = args[0]
@@ -33,7 +34,8 @@ def configure_api_keys(*args, **kwargs) -> None:
             with open(filepath) as f:
                 _update_keys_memory(json.load(f))
         else:
-            raise ValueError(f"File type of {filepath} is not supported (only .json)")
+            raise ValueError(
+                f"File type of {filepath} is not supported (only .json)")
 
     # load api keys from keyword arguments
     elif set(kwargs.keys()).issubset(set(supported_apis)):
@@ -41,25 +43,25 @@ def configure_api_keys(*args, **kwargs) -> None:
     else:
         raise ValueError(f"Only {supported_apis} apis are supported.")
 
-    # save to cache and sync 
+    # save to cache and sync
     _save_keys_to_cache()
     _sync_keys_with_apis()
 
 
 def load_keys_from_cache() -> int:
     """Load API keys from the disk cache."""
-    load_dotenv(env_path) # from cache to os environment
-    num_keys = _load_keys_from_env() # load keys from os env
-    logging.debug(f"Loaded {num_keys} api keys from cache" \
-      if num_keys else "api keys env cache does not exist")
+    load_dotenv(env_path)  # from cache to os environment
+    num_keys = _load_keys_from_env()  #  load keys from os env
+    logging.debug(f"Loaded {num_keys} api keys from cache"
+                  if num_keys else "api keys env cache does not exist")
 
 
 # --- private related to key management ---
 
 def _update_keys_memory(keys: dict) -> None:
     """Update the API keys memory."""
-    _verify_keys(keys) # check if keys are supported
-    api_keys.update(keys) # then save to live memory
+    _verify_keys(keys)  #  check if keys are supported
+    api_keys.update(keys)  #  then save to live memory
 
 
 def _verify_keys(keys_from_env: dict) -> bool:

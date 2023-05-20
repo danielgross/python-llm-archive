@@ -23,7 +23,8 @@ class TestOpenAICompletions(unittest.TestCase):
 
     @vcr.use_cassette("tests/fixtures/openai/test_simple_chat.yaml", filter_headers=['authorization', 'x-api-key'])
     def test_simple_chat(self):
-        self.assertEqual(llm.chat(["What is 2+2? Reply with just one number and no punctuaction."], engine="openai:gpt-3.5-turbo"), "4")
+        self.assertEqual(llm.chat(
+            ["What is 2+2? Reply with just one number and no punctuaction."], engine="openai:gpt-3.5-turbo"), "4")
 
     @vcr.use_cassette("tests/fixtures/openai/test_completion_chat_model.yaml", filter_headers=['authorization'])
     def test_completion_chat_model(self):
