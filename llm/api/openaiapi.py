@@ -3,13 +3,13 @@
 import openai
 import logging
 
-from llm import util
+from llm.utils.parsing import structure_chat
 
 
 def complete(prompt, engine="text-davinci-003", **kwargs):
     """Complete text using the OpenAI API."""
     if engine.startswith("gpt-3.5") or engine.startswith("gpt-4"):
-        return chat(util.structure_chat([prompt]), engine=engine, **kwargs)
+        return chat(structure_chat([prompt]), engine=engine, **kwargs)
     logging.debug(f"Completing with {engine} using prompt: {prompt}")
     return openai.Completion.create(
         engine=engine,

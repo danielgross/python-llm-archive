@@ -8,14 +8,16 @@
 # Also try:
 # llm.setup_cache() and all requests will be cached
 
-import json
-import os
-
-from llm.util import parse_args, structure_chat, configure_api_keys
+from llm.utils.parsing import parse_args, structure_chat
+from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
 from llm.api import openaiapi, claude
 
 
-def complete(prompt, engine="text-davinci-003", **kwargs):
+# Try loading keys from cache
+load_keys_from_cache()
+
+
+def complete(prompt, engine="openai:text-davinci-003", **kwargs):
     args = parse_args(engine, **kwargs)
     if args.service == "openai":
         return openaiapi.complete(prompt, args.engine, **args.kwargs)
@@ -58,10 +60,9 @@ def embed(text, engine="text-davinci-003", **kwargs):
     raise NotImplementedError("Embedding is not yet implemented.")
 
 
-def set_api_key(**key_thing):
+def set_api_key(*args, **kwargs):
     """Set the OpenAI API key. Call me like this:
-    llm.set_api_keys(openai="sk-...", anthropic="sk-...")
-    or
-    llm.set_api_keys("path/to/api_keys.json")
+    - llm.set_api_keys(openai="sk-...")
+    - llm.set_api_keys("path/to/api_keys.json")
     """
-    return configure_api_keys(**key_thing)
+    return configure_api_keys(*args, **kwargs)
