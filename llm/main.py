@@ -10,7 +10,7 @@
 
 from llm.utils.parsing import parse_args, structure_chat, format_streaming_output
 from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
-from llm.api import anthropicapi, openaiapi
+from llm.api import anthropicapi, openaiapi, testapi
 import asyncio
 
 # Try loading keys from cache
@@ -23,6 +23,8 @@ def complete(prompt, engine="openai:text-davinci-003", **kwargs):
         result = openaiapi.complete(prompt, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.complete(prompt, args.engine, **args.kwargs)
+    elif args.service == "test":
+        result = testapi.complete(prompt, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
@@ -37,6 +39,8 @@ def chat(messages, engine="openai:gpt-3.5-turbo", **kwargs):
         result = openaiapi.chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.chat(messages, args.engine, **args.kwargs)
+    elif args.service == "test":
+        result = testapi.chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
@@ -54,6 +58,8 @@ async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="de
         result = openaiapi.stream_chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.stream_chat(messages, args.engine, **args.kwargs)
+    elif args.service == "test":
+        result = testapi.stream_chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
 
