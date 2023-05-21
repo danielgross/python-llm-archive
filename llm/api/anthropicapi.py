@@ -27,7 +27,7 @@ def format_chat_messages(messages):
     return "".join(prompt)
 
 
-def complete(prompt, engine="claude-v1", max_prompt_tokens=None, max_tokens_to_sample=10, **kwargs):
+def complete(prompt, engine="claude-v1", prompt_overflow=None, max_tokens_to_sample=10, **kwargs):
     # TODO implement max_prompt_tokens
 
     headers = {
@@ -55,7 +55,7 @@ def complete(prompt, engine="claude-v1", max_prompt_tokens=None, max_tokens_to_s
     return result["completion"]
 
 
-def chat(messages, engine="claude-v1", system=None, max_prompt_tokens=None, max_tokens_to_sample=30, **kwargs):
+def chat(messages, engine="claude-v1", system=None, prompt_overflow=None, max_tokens_to_sample=30, **kwargs):
     if system is not None:
         raise NotImplementedError(
             "System messages are not yet implemented for Claude.")
@@ -72,7 +72,7 @@ def chat(messages, engine="claude-v1", system=None, max_prompt_tokens=None, max_
     return resp["completion"]
 
 
-async def stream_chat(messages, engine="claude-v1", system=None, max_prompt_tokens=None, max_tokens_to_sample=100, **kwargs):
+async def stream_chat(messages, engine="claude-v1", system=None, prompt_overflow=None, max_tokens_to_sample=100, **kwargs):
     c = client()
     prompt = format_chat_messages(messages)
     response = await c.acompletion_stream(

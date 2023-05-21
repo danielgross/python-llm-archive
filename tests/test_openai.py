@@ -3,6 +3,7 @@ import asynctest
 import os
 import vcr
 import llm
+import llm.api.openaiapi
 import logging
 
 # Only get API keys if they exist
@@ -52,13 +53,13 @@ class TestOpenAICompletions(unittest.TestCase):
     def test_token_overflow(self):
         """Test that we can handle a token overflow."""
         prompt = "Answer basic math question. 2+2=X Then multiply X by 100. Final answer is?"
-        normal_completion = llm.complete(prompt=prompt)
-        chat_completion = llm.chat(prompt)
+        normal_completion = llm.complete(prompt=prompt, engine="openai:gpt-3.5-turbo")
+        chat_completion = llm.chat(prompt, engine="openai:gpt-3.5-turbo")
         self.assertTrue("400" in normal_completion, normal_completion)
         self.assertTrue("400" in chat_completion, chat_completion)
-
-        normal_completion = llm.complete(prompt=prompt, max_prompt_tokens=10)
-        chat_completion = llm.chat(prompt, max_prompt_tokens=10)
+        llm.api.openaiapi.MODEL_CONTEXT_SIZE_LIMITS["gpt-3.5-turbo"] = 10
+        normal_completion = llm.complete(prompt=prompt, engine="openai:gpt-3.5-turbo", prompt_overflow="trim")
+        chat_completion = llm.chat(prompt, engine="openai:gpt-3.5-turbo", prompt_overflow="trim")
         self.assertTrue("4" in normal_completion and "400" not in normal_completion, normal_completion)
         self.assertTrue("4" in chat_completion and "400" not in chat_completion, chat_completion)
 
