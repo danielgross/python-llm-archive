@@ -10,7 +10,7 @@
 
 from llm.utils.parsing import parse_args, structure_chat, format_streaming_output
 from llm.utils.apikeys import load_keys_from_cache, configure_api_keys
-from llm.api import anthropicapi, openaiapi, testapi
+from llm.api import anthropicapi, openaiapi
 import asyncio
 
 # Try loading keys from cache
