@@ -23,8 +23,6 @@ def complete(prompt, engine="openai:text-davinci-003", **kwargs):
         result = openaiapi.complete(prompt, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.complete(prompt, args.engine, **args.kwargs)
-    elif args.service == "test":
-        result = testapi.complete(prompt, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
@@ -39,8 +37,6 @@ def chat(messages, engine="openai:gpt-3.5-turbo", **kwargs):
         result = openaiapi.chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.chat(messages, args.engine, **args.kwargs)
-    elif args.service == "test":
-        result = testapi.chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
     return result.strip()
@@ -58,8 +54,6 @@ async def stream_chat(messages, engine="openai:gpt-3.5-turbo", stream_method="de
         result = openaiapi.stream_chat(messages, args.engine, **args.kwargs)
     elif args.service == "anthropic":
         result = anthropicapi.stream_chat(messages, args.engine, **args.kwargs)
-    elif args.service == "test":
-        result = testapi.stream_chat(messages, args.engine, **args.kwargs)
     else:
         raise ValueError(f"Engine {engine} is not supported.")
 
@@ -89,6 +83,10 @@ async def multi_stream_chat(messages, engines=["anthropic:claude-instant-v1", "o
     The responses will be yielded in the order they are received from the engines.
     Each response is returned as a tuple of the form (engine_name, response).
     """
+    if 'engine' in kwargs:
+        raise ValueError("multi_stream_chat does not accept an engine argument, use stream_chat instead.")
+    if 'stream_method' in kwargs:
+        raise ValueError("multi_stream_chat does not accept a stream_method argument, it is set to 'full' for now.")
     # Create a list of streams, each one labeled with the name of the engine
     streams = [(engine, stream_chat(messages, engine, "full", **kwargs))
                for engine in engines]

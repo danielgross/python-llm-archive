@@ -46,6 +46,21 @@ class TestOpenAICompletions(unittest.TestCase):
         self.assertTrue(len(response.split(' ')) > 3)
         self.assertTrue(
             '.' in response or '!' in response or '?' in response, response)
+        
+
+    @vcr.use_cassette("tests/fixtures/openai/test_token_overflow.yaml", filter_headers=['authorization'])
+    def test_token_overflow(self):
+        """Test that we can handle a token overflow."""
+        prompt = "Answer basic math question. 2+2=X Then multiply X by 100. Final answer is?"
+        normal_completion = llm.complete(prompt=prompt)
+        chat_completion = llm.chat(prompt)
+        self.assertTrue("400" in normal_completion, normal_completion)
+        self.assertTrue("400" in chat_completion, chat_completion)
+
+        normal_completion = llm.complete(prompt=prompt, max_prompt_tokens=10)
+        chat_completion = llm.chat(prompt, max_prompt_tokens=10)
+        self.assertTrue("4" in normal_completion and "400" not in normal_completion, normal_completion)
+        self.assertTrue("4" in chat_completion and "400" not in chat_completion, chat_completion)
 
 
 class TestOpenAIStreaming(asynctest.TestCase):
