@@ -24,8 +24,13 @@ def _trim_overflow(text, model):
     """Trim text to max_tokens."""
     enc = tiktoken.encoding_for_model(model)
     tokens = enc.encode(text)
-    if len(tokens) > MODEL_CONTEXT_SIZE_LIMITS[model]:
-        tokens = tokens[:MODEL_CONTEXT_SIZE_LIMITS[model]]
+    model_limit = MODEL_CONTEXT_SIZE_LIMITS[model]
+    # TODO I should set based on how much requested by user, for now make it 10% of possible size.
+    response_buffer = int(model_limit * 0.1)
+    logger.debug(f"Trimming overflow for {model} (from {len(tokens)} to {model_limit - response_buffer})")
+    total_size = len(tokens) + response_buffer
+    if total_size > model_limit:
+        tokens = tokens[:model_limit - response_buffer]
         return enc.decode(tokens)
     return text
 
