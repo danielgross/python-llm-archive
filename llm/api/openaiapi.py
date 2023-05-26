@@ -38,7 +38,7 @@ def _trim_overflow(text, model):
 def complete(prompt, engine, prompt_overflow=None, **kwargs):
     """Complete text using the OpenAI API."""
     if prompt_overflow == "trim":
-        logging.debug(f"Trimming overflow for {engine}")
+        logger.debug(f"Trimming overflow for {engine}")
         prompt = _trim_overflow(prompt, engine)
 
     if engine.startswith("gpt-3.5") or engine.startswith("gpt-4"):
@@ -54,7 +54,7 @@ def complete(prompt, engine, prompt_overflow=None, **kwargs):
 def chat(messages, engine, system=None, prompt_overflow=None, **kwargs):
     """Chat with the OpenAI API."""
     if prompt_overflow == "trim":
-        logging.debug(f"Trimming overflow for {engine}")
+        logger.debug(f"Trimming overflow for {engine}")
         # TODO For now, just trim the last message.
         messages[-1]['content'] = _trim_overflow(
             messages[-1]['content'], engine)
@@ -76,7 +76,7 @@ def chat(messages, engine, system=None, prompt_overflow=None, **kwargs):
 async def stream_chat(messages, engine, system=None, prompt_overflow=None, **kwargs):
     """Chat with the OpenAI API."""
     if prompt_overflow == "trim":
-        logging.debug(f"Trimming overflow for {engine}")
+        logger.debug(f"Trimming overflow for {engine}")
         # TODO For now, just trim the last message.
         messages[-1]['content'] = _trim_overflow(
             messages[-1]['content'], engine)

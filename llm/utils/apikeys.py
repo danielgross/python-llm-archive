@@ -12,6 +12,8 @@ env_path = os.path.join(py_llm_dir, "apikeys.env")
 supported_apis = ["openai", "anthropic"]
 api_keys = {}
 
+logger = logging.getLogger(__name__)
+
 
 # --- public interface ---
 
@@ -52,7 +54,7 @@ def load_keys_from_cache() -> int:
     """Load API keys from the disk cache."""
     load_dotenv(env_path)  # from cache to os environment
     num_keys = _load_keys_from_env()  #  load keys from os env
-    logging.debug(f"Loaded {num_keys} api keys from cache"
+    logger.debug(f"Loaded {num_keys} api keys from cache"
                   if num_keys else "api keys env cache does not exist")
 
 
@@ -74,7 +76,7 @@ def _verify_keys(keys_from_env: dict) -> bool:
 def _sync_keys_with_apis() -> None:
     """Update the API keys from the environment."""
     import openai
-    logging.debug(f"Setting OpenAI API key to {api_keys.get('openai')}")
+    logger.debug(f"Setting OpenAI API key to {api_keys.get('openai')}")
     openai.api_key = api_keys.get("openai")
 
 
